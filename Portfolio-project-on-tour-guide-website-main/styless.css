@@ -1,0 +1,620 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+}
+
+/*------------------------Scroll Bar-----------------------*/
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px grey;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #b1c61385;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #39b3a5;
+}
+
+/*========================Nav Bar=========================*/
+.nav-bar {
+  display: flex;
+  flex-flow: row wrap;
+  width: 100%;
+  height: 90px;
+  background-color: #b1c61385;
+  box-shadow: 3px 3px 10px rgb(14, 15, 17);
+  align-items: center;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.logo {
+  flex: 1;
+  font-size: 40px;
+  padding: 20px;
+  margin-left: 50px;
+  font-family: "Courier New", Courier, monospace;
+}
+
+ul.menu {
+  flex: 1;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.menu li {
+  flex: 1;
+  list-style-type: none;
+  font-size: 16px;
+  font-family: "Barlow Condensed";
+  text-align: center;
+}
+
+.menu li a {
+  text-decoration: none;
+  color: #7d0657;
+  text-transform: uppercase;
+}
+
+.menu li a:hover {
+  color: rgb(14, 14, 186);
+  text-decoration: underline;
+}
+
+/*=============================Banner=============================*/
+
+.banner {
+  width: 100%;
+  height: 100vh;
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.banner-desktop {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.banner-desktop {
+  transition: opacity 1s ease-in-out, background-image 1s ease-in-out;
+}
+
+.banner-desktop::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.banner-text-item {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+
+.banner-heading {
+  flex: 1;
+}
+
+.banner-heading h1 {
+  font-size: 90px;
+  font-weight: normal;
+  color: #bc07aadc;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+
+.banner-text-item .form {
+  flex: 1;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(227, 226, 211, 0.673);
+  border-radius: 5px;
+  width: 70%;
+  padding: 1% 2%;
+}
+
+.banner-text-item input,
+.banner-text-item .date,
+.banner-text-item .book {
+  padding: 15px;
+  margin-right: 10px;
+  font-size: 18px;
+  font-family: Roboto;
+  border-radius: 5px;
+  outline: 0;
+  border: none;
+}
+
+.banner-text-item input {
+  width: 50%;
+  flex: 2;
+}
+
+.banner-text-item .date {
+  width: 20%;
+  flex: 1;
+}
+
+.banner-text-item .book {
+  text-decoration: none;
+  color: #190204;
+  text-transform: uppercase;
+  padding: 15px;
+  cursor: pointer;
+  background-color: #b5c80e;
+  font-size: 16px;
+  font-weight: normal;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  width: 20%;
+}
+
+/*========================= Mobile Banner (Video) =======================*/
+
+.banner-mobile {
+  display: none;
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.banner-mobile video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+.banner-mobile::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: 1;
+}
+
+.banner-mobile .banner-text-item {
+  z-index: 2;
+  color: white;
+  text-align: center;
+}
+
+/*===========================Services===========================*/
+.services {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.service-item {
+  flex: 1 1 250px;
+  padding: 50px 10px;
+  border: lightcyan solid 1px;
+  text-align: center;
+  margin: 80px 30px;
+  transition: all 1s;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: translateY(60px);
+}
+
+.service-item:hover {
+  box-shadow: 3px 3px 20px lightsteelblue;
+  transform: translateY(-10px);
+}
+
+/* Animation for Services */
+@keyframes fadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.service-item.visible {
+  opacity: 1;
+  animation: fadeUp 1s ease forwards;
+}
+
+.service-item h2 {
+  font-family: Barlow Condensed;
+  font-size: 18px;
+  width: 120px;
+  color: #001f38;
+  flex: 1;
+}
+
+.service-item img {
+  width: 60px;
+  height: 60px;
+  flex: 1;
+}
+
+/*=============================Places===============================*/
+.places-text {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.places-text small {
+  font-family: Roboto;
+  color: #88097b00;
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+.places-text h2 {
+  font-family: Barlow Condensed;
+  font-size: 55px;
+  color: #191d34;
+  letter-spacing: 1px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-gap: 30px;
+  align-items: center;
+  justify-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.card {
+  border: 1px solid lightgray;
+  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  width: 100%;
+  max-width: 350px;
+  height: auto;
+  background: #fff;
+}
+
+.card img {
+  max-width: 100%;
+  height: 300px;
+  border-radius: 8px;
+  cursor: pointer;
+  object-fit: cover;
+}
+
+.cards .text {
+  padding: 20px;
+  font-family: Barlow Condensed;
+  line-height: 40px;
+}
+
+.cards .card-box {
+  display: flex;
+  flex-flow: row;
+  background-color: #cdd615;
+  font-size: 18px;
+  font-family: Roboto;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.cards .time {
+  flex: 1;
+}
+
+.cards .location {
+  flex: 2;
+}
+
+.cards .cost {
+  color: #4cafad;
+  font-size: 20px;
+}
+
+/*------------Zoom in Photos--------------*/
+.zoom-img {
+  float: left;
+  position: relative;
+  width: 100%;
+  height: 320px;
+  overflow: hidden;
+}
+
+.zoom-img .img-card {
+  position: absolute;
+  overflow: hidden;
+}
+
+.img-card img {
+  transition: 0.8s ease;
+}
+
+.card:hover .zoom-img img {
+  transform: scale(1.1);
+}
+
+/*=========================About Us=========================*/
+.about {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 150px;
+  gap: 50px;
+}
+
+.about-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-img img {
+  width: 500px;
+  height: 700px;
+  object-fit: cover;
+  border-radius: 10px;
+  box-shadow: 2px 2px 6px 0 rgba(0, 0, 0, 0.3);
+}
+
+.about-text {
+  flex: 1;
+  display: flex;
+  flex-flow: column wrap;
+  align-items: flex-start;
+}
+
+.about-text small,
+.about-text p,
+.about-text input,
+.about-text a {
+  font-family: Roboto;
+}
+
+.about-text small {
+  color: #b51585;
+  font-size: 18px;
+}
+
+.about-text h2 {
+  font-family: Barlow Condensed;
+  font-size: 60px;
+  color: #191d34;
+  margin-top: 20px;
+}
+
+.about-text label {
+  padding-bottom: 10px;
+  color: #506172;
+  font-weight: bolder;
+  font-family: Roboto;
+  letter-spacing: 1px;
+}
+
+.about-text p {
+  width: 100%;
+  max-width: 500px;
+  line-height: 30px;
+  color: #506172;
+  font-weight: bolder;
+  padding: 40px 0;
+}
+
+.about-text a {
+  background-color: #fff;
+  border: 2px solid #014b85;
+  text-decoration: none;
+  border-radius: 5px;
+  width: 180px;
+  padding: 15px;
+  text-align: center;
+  margin-top: 30px;
+  color: #014b85;
+  font-weight: bolder;
+  font-size: 14px;
+}
+
+.about-text a:hover {
+  background-color: #014b85;
+  color: #fff;
+}
+
+/*===============Footer===================*/
+.footer {
+  background-image: url("https://i.ibb.co/4Pzy6cJ/memo3.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 100%;
+  height: 670px;
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer::before {
+  position: absolute;
+  content: "";
+  display: block;
+  background-color: rgba(130, 130, 201, 0.8);
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.footer .links {
+  position: relative;
+  color: #fff;
+  flex: 1;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.links ul {
+  list-style-type: none;
+}
+
+.links h3 {
+  font-family: Barlow Condensed;
+  font-weight: normal;
+  font-size: 23px;
+  margin-bottom: 15px;
+}
+
+.links li {
+  font-family: Roboto;
+  cursor: pointer;
+  padding: 15px 0;
+}
+
+.links li:hover {
+  color: #ffa801;
+}
+
+/*==========================Responsive=============================*/
+
+@media (max-width: 1200px) {
+  .banner-heading h1 {
+    font-size: 60px;
+  }
+}
+
+@media (max-width: 942px) {
+  .nav-bar {
+    flex-flow: column wrap;
+    height: auto;
+    text-align: center;
+    position: static;
+  }
+
+  .logo {
+    font-size: 30px;
+    margin: 10px auto;
+    font-family: Satisfy;
+    color: #fde02f;
+  }
+
+  .nav-bar ul {
+    display: none;
+  }
+
+  .services {
+    flex-direction: column;
+  }
+
+  .service-item {
+    width: 80%;
+    margin: 20px 0;
+  }
+
+  .about {
+    flex-direction: column;
+    padding: 60px 20px;
+  }
+
+  .about-img img {
+    width: 100%;
+    height: auto;
+  }
+
+  .about-text {
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-desktop {
+    display: none !important;
+  }
+
+  .banner-mobile {
+    display: flex !important;
+  }
+
+  .banner-heading h1 {
+    font-size: 48px;
+  }
+
+  .banner-text-item .form {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .banner-text-item input,
+  .banner-text-item .date,
+  .banner-text-item .book {
+    width: 100%;
+    margin: 5px 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .services {
+    margin: 40px 0;
+  }
+
+  .service-item {
+    width: 90%;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    width: 90%;
+  }
+
+  .footer {
+    flex-direction: column;
+    height: auto;
+    text-align: center;
+    padding: 50px 0;
+  }
+}
