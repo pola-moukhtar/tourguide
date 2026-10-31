@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 1200" role="img" aria-labelledby="title description">
+  <title id="title">Illustrated landscape placeholder</title>
+  <desc id="description">Layered hills beneath a warm sky, intended to be replaced with approved guide photography.</desc>
+  <defs>
+    <linearGradient id="sky" x1="0" x2="0" y1="0" y2="1"><stop stop-color="#d6c8a8"/><stop offset="1" stop-color="#eadcc3"/></linearGradient>
+    <linearGradient id="hill" x1="0" x2="1" y1="0" y2="1"><stop stop-color="#81917d"/><stop offset="1" stop-color="#465d50"/></linearGradient>
+  </defs>
+  <path fill="url(#sky)" d="M0 0h900v1200H0z"/>
+  <circle cx="660" cy="290" r="105" fill="#f0d9ad" opacity=".8"/>
+  <path fill="#b2b49a" d="M0 660 190 500l155 120 215-265 340 300v545H0z"/>
+  <path fill="url(#hill)" d="m0 760 240-145 170 113 210-180 280 160v492H0z"/>
+  <path fill="#293c35" d="m0 930 230-128 170 98 215-150 285 168v282H0z"/>
+</svg>

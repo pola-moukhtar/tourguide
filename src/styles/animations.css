@@ -1,0 +1,19 @@
+/* Shared timing tokens; component motion also respects the user's reduced-motion setting. */
+:root { --motion-fast: 160ms; --motion-normal: 240ms; }
+
+@keyframes menu-enter {
+  from { opacity: 0; transform: translateY(-5px) scale(.99); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes modal-appear {
+  from { opacity: 0; transform: translateY(10px) scale(.99); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.mobile-navigation:not([hidden]) { animation: menu-enter var(--motion-fast) ease-out both; }
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-navigation:not([hidden]) { animation: none; }
+  .modal[open] { animation: none; }
+}
